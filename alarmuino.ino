@@ -7,7 +7,7 @@ const char* ssid = "nombre del WIFI";
 const char* password = "contraseña del WIFI";
 
 // Configuración de Telegram
-const char* botToken = "TOKEN DEL BOTO";
+const char* botToken = "TOKEN DEL BOT";
 // En mi caso necesitaba que los mensajes se mandaran a 2 chat ids distintos
 const char* chat_id_1 = "CHAT AL QUE MANDAR LOS MENSAJES";
 const char* chat_id_2 = "CHAT AL QUE MANDAR LOS MENSAJES";
