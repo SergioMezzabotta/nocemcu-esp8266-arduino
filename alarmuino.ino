@@ -2,25 +2,25 @@
 #include <WiFiClientSecure.h>
 #include <UniversalTelegramBot.h>
 
-// Configuración del WIFI
-const char* ssid = "nombre del WIFI";
-const char* password = "contraseña del WIFI";
+// Wi-Fi Configuration
+const char* ssid = "Wi-Fi_name";
+const char* password = "Wi-Fi_password";
 
-// Configuración de Telegram
-const char* botToken = "TOKEN DEL BOT";
-// En mi caso necesitaba que los mensajes se mandaran a 2 chat ids distintos
-const char* chat_id_1 = "CHAT AL QUE MANDAR LOS MENSAJES";
-const char* chat_id_2 = "CHAT AL QUE MANDAR LOS MENSAJES";
+// Telegram Configuration
+const char* botToken = "BOT_TOKEN";
+// In my case, I needed messages to be sent to two different chat IDs.
+const char* chat_id_1 = "CHAT_TO_SEND_MESSAGES_TO";
+const char* chat_id_2 = "CHAT_TO_SEND_MESSAGES_TO";
 
 WiFiClientSecure client;
 UniversalTelegramBot bot(botToken, client);
 
 void setup() {
-  Serial.begin(115200);
-  delay(10);
+Serial.begin(115200);
+delay(10);
 
-  Serial.println();
-  Serial.print("Conectando a ");
+Serial.println();
+  Serial.print("Connecting to ");
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
@@ -31,7 +31,7 @@ void setup() {
   }
 
   Serial.println("");
-  Serial.println("WiFi conectado");
+  Serial.println("WiFi connected");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
@@ -41,7 +41,7 @@ void setup() {
 }
 
 void sendTelegramMessages() {
-  String message = "¡ALERTA LA ALARMA SE HA DISPARADO!";
+  String message = "ALERT THE ALARM HAS BEEN TRIGGERED!";
   
   for (int i = 0; i < 3; i++) {
     bot.sendMessage(chat_id_1, message, "");
